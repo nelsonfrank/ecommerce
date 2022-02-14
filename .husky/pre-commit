@@ -3,6 +3,9 @@
 
 echo '🏗️👷 Styling, testing and building your project before committing'
 
+# change dir to front-end 
+cd ./ecommerce-frontend 
+
 # Check Prettier standards
 npm run format ||
 (
