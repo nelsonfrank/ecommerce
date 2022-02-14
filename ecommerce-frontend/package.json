@@ -1,22 +1,59 @@
 {
-  "name": "ecommerce-frontend",
-  "private": true,
+  "name": "nextjs-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "next start -H 0.0.0.0 -p ${PORT:-8080}",
+    "lint": "next lint",
+    "check-types": "tsc --pretty --noEmit",
+    "check-format": "prettier --check .",
+    "check-lint": "eslint . --ext ts --ext tsx --ext js",
+    "format": "prettier --write . && git add .",
+    "check-all": "npm run check-format && npm run check-lint && npm run check-types && npm run build",
+    "prepare": "cd .. && husky install",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nelsonfrank/nextjs-template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nelsonfrank/nextjs-template/issues"
+  },
+  "homepage": "https://github.com/Nelsonfrank/nextjs-template#readme",
   "dependencies": {
-    "next": "12.0.7",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "next": "^12.0.9",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@types/node": "17.0.7",
-    "@types/react": "17.0.38",
-    "eslint": "8.6.0",
-    "eslint-config-next": "12.0.7",
-    "typescript": "4.5.4"
+    "@types/node": "^17.0.12",
+    "@types/react": "^17.0.38",
+    "@typescript-eslint/eslint-plugin": "^5.10.1",
+    "@typescript-eslint/parser": "^5.10.1",
+    "autoprefixer": "^10.4.2",
+    "eslint": "^8.7.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-testing-library": "^5.0.4",
+    "husky": "^7.0.0",
+    "jest": "^27.4.7",
+    "postcss": "^8.4.5",
+    "prettier": "2.5.1",
+    "tailwindcss": "^3.0.17",
+    "typescript": "^4.5.5"
   }
 }

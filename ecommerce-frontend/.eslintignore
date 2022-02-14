@@ -1,0 +1,8 @@
+# next build files
+.next
+next-env.d.ts
+public
+
+# node modules
+node_modules
+package-lock.json
